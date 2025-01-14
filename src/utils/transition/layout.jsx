@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { opacity, expand } from "./anim";
 
-const Layout = ({ children, backgroundColor, text }) => {
+const Layout = ({ children}) => {
   const anim = (variants, custom = null) => {
     return {
       initial: "initial",
@@ -15,7 +15,7 @@ const Layout = ({ children, backgroundColor, text }) => {
   const nbOfColumns = 5;
 
   return (
-    <div className="page stairs" style={{ backgroundColor }}>
+    <div className="page stairs">
       <motion.div {...anim(opacity)} className="transition-background" />
 
       <div className="transition-container">
