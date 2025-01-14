@@ -13,8 +13,11 @@ const Several = () => {
         autoPlay
       />
 
-      <div className="absolute size-fit">
-        <IoMdPlay color="#fff" className="text-[8rem]" />
+      <div className="absolute size-fit left-[47%] max-tablet:left-[45%]">
+        <IoMdPlay
+          color="#fff"
+          className="text-[8rem] max-tablet:text-[6rem] "
+        />
       </div>
     </section>
   );

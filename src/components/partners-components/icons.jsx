@@ -102,12 +102,12 @@ export default function Icons() {
 
     return (
         <>
-            <div className="w-full bg-background grid grid-cols-4 gap-[1.5rem]">
+            <div className="w-full bg-background grid grid-cols-4 gap-[1.5rem] max-tablet:grid-cols-2">
                 {icons.map((icon) => (
 
                     <motion.div
                         key={icon.id}
-                        className={`relative w-full h-[450px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group`}
+                        className={`relative w-full h-[450px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group max-tablet:h-[250px]`}
                         initial="initial"
                         whileHover="hover"
                     >
@@ -129,7 +129,7 @@ export default function Icons() {
                             key={icon.id}
                             variants={opacityVariants}
                         >
-                            <BsPlus color="#111111" size={32} />
+                            <BsPlus color="#eee" className="text-[12px]"/>
                         </motion.div>
                     </motion.div>
 

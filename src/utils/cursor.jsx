@@ -88,8 +88,10 @@ function Cursor({ refPos }) {
                     src={cursorData}
                     alt=""
                   />
-                  <div className="absolute w-[100px] h-[100px]  backdrop-blur-xl rounded-full flex items-center justify-center">
-                    <p className="text-color3">View</p>
+                  <div className="absolute w-[100px] h-[100px] backdrop-blur-xl rounded-full flex items-center justify-center">
+                    <p className="text-color3 text-[.8rem] font-general uppercase">
+                      View
+                    </p>
                   </div>
                 </motion.div>
               )}

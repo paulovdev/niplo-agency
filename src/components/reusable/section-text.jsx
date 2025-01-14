@@ -8,7 +8,7 @@ const SectionText = ({ text, src, linkText, linkBol }) => {
 
   return (
     <div className="w-full mb-[2.5rem] flex items-center justify-between select-none pointer-events-none">
-      <h2 className="font-chivo text-color text-[1rem] font-[600] uppercase ">
+      <h2 className="font-general text-color text-[1.1rem] font-[600] uppercase ">
         {text}
       </h2>
       {isLinkActive && (

@@ -55,7 +55,7 @@ const TextSlide = ({ phrases, color, span, rightContentBol }) => {
             >
               {span}
             </span>
-            <motion.div style={{ rotate }}>
+            <motion.div className="max-tablet:hidden" style={{ rotate }}>
               <RiArrowRightDownLine className={`${color}`} size={42} />
             </motion.div>
           </>

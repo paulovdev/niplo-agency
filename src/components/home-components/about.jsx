@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -23,11 +23,11 @@ const About = () => {
     }),
   };
   return (
-    <section className="max-w-[1200px] pb-[125px] mb-[50px] mx-auto my-0 max-tablet:px-[1rem]">
+    <section className="max-w-[1200px] pb-[125px] mb-[50px] mx-auto my-0 max-tablet:pb-[75px] max-tablet:px-0">
       {phrases.map((phrase, index) => (
         <div key={index} className="overflow-hidden" ref={ref}>
           <motion.h1
-            className="text-center text-[3rem] font-[500] tracking-[-1px] leading-[1.2] max-tablet:text-[2.5rem]"
+            className="text-center text-[3rem] font-[500] tracking-[-1px] leading-[1.2] max-tablet:text-[2.5rem] max-tablet:text-start"
             custom={index}
             variants={appear}
             initial="initial"

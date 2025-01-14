@@ -18,19 +18,19 @@ export default function Hero() {
       <div className="c-p relative w-full h-fit">
         <div className="relative w-full flex items-center justify-between">
           <div className="w-[25%] flex justify-start">
-            <span className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <span className="font-general text-color text-[.8rem] font-[600] uppercase ">
               year:
             </span>
           </div>
 
           <div className="w-[25%] flex justify-start">
-            <h1 className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <h1 className="font-general text-color text-[.8rem] font-[600] uppercase ">
               NAME:
             </h1>
           </div>
 
           <div className="w-[50%] flex justify-end">
-            <p className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <p className="font-general text-color text-[.8rem] font-[600] uppercase ">
               type:
             </p>
           </div>

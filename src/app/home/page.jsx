@@ -3,7 +3,7 @@ import Hero from "../../components/home-components/hero";
 import Works from "../../components/home-components/works";
 import MaskBackground from "@/components/reusable/mask-background";
 import Blog from "../../components/home-components/blog";
-import { Shape } from "@/utils/shape";
+/* import { Shape } from "@/utils/shape"; */
 import Partners from "@/components/home-components/partners";
 import Services from "@/components/home-components/services";
 /* import Paragraph from "@/components/home-components/paragraph"; */
@@ -36,7 +36,7 @@ const Home = () => {
         <Blog />
       </div>
 
-      <Shape pos="right-12" />
+   
     </main>
   );
 };

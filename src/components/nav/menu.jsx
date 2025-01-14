@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,9 +8,8 @@ const PerspectiveMenuText = ({ label, isActive }) => {
   return (
     <div className="active-menu-link size-full  bg-none flex items-start justify-center flex-col ">
       <div
-        className={` text-[4rem] max-tablet:text-[2.5rem] ${
-          isActive ? "text-active" : "text-color3"
-        } font-[400]`}
+        className={`uppercase tracking-[1px] font-[400] text-[4.5vw] max-tablet:text-[2.5rem] 
+          ${isActive ? "text-active" : "text-color3"} `}
       >
         {label}
       </div>
@@ -46,7 +45,7 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
       },
     },
     open: {
-      height: "50vh",
+      height: "60vh",
       transition: {
         duration: 0.8,
         type: "tween",
@@ -110,8 +109,8 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
           variants={contentAnim}
           initial="closed"
           animate={menuToggle ? "open" : "closed"}
-          className="relative size-full  py-[4rem] px-[2.5rem] flex items-center justify-between border-b border-border2 
-                    max-tablet:flex-col max-tablet:px-[1rem] max-tablet:py-[6rem]"
+          className="relative size-full py-[3rem] px-[2.5rem] flex items-center justify-between border-b border-border2 
+                    max-tablet:flex-col max-tablet:px-[1rem] max-tablet:py-[8rem]"
         >
           <div className="w-full flex flex-wrap gap-[2.5rem] max-tablet:gap-[1rem]">
             {navigationsMenuText.map((i) => {

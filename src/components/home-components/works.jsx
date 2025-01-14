@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { useCursor } from "@/context/cursor-context";
 import SectionText from "../reusable/section-text";
@@ -21,7 +21,7 @@ const Work = ({ year, name, category, src, color, id }) => {
 
   return (
     <motion.div
-      className="c-p relative w-full h-fit py-[1rem] hover:opacity-40 transition-all "
+      className="c-p relative w-full h-fit py-[1rem] hover:opacity-60 transition-all "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
@@ -64,19 +64,19 @@ const Works = () => {
       <div className="c-p relative w-full h-fit">
         <div className="relative w-full flex items-center justify-between">
           <div className="w-[25%] flex justify-start">
-            <span className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <span className="font-general text-color text-[.8rem] font-[600] uppercase ">
               year:
             </span>
           </div>
 
           <div className="w-[25%] flex justify-start">
-            <h1 className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <h1 className="font-general text-color text-[.8rem] font-[600] uppercase ">
               NAME:
             </h1>
           </div>
 
           <div className="w-[50%] flex justify-end">
-            <p className="font-chivo text-color text-[.9rem] font-[600] uppercase ">
+            <p className="font-general text-color text-[.8rem] font-[600] uppercase ">
               type:
             </p>
           </div>
