@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { usePathname } from "next/navigation";
 
-import Layout from "@/utils/transition/Layout";
+import Layout from "@/utils/transition/layout";
 import Nav from "@/components/nav/navbar";
 import Cursor from "@/utils/cursor";
 
