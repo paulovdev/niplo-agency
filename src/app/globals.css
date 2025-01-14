@@ -3,19 +3,103 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f0f0;
+  --background-2: #e7e7e7;
+  --background-3: #090909;
+  --background-4: #070707;
+  --background-5: #121212;
+
+  --border: #d8d8d8;
+  --border-2: #202020;
+
+  --color: #222222;
+  --color-2: #777777;
+  --color-3: #e0dfdd;
+  --color-4: #e0dfdd;
+  --color-5: #818181;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100dvw;
+  overflow-x: hidden;
+  font-family: "Inter";
+}
+
+@layer base {
+  @font-face {
+    font-family: "general";
+    src: url("/fonts/general.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Chivo Mono";
+    src: url("/fonts/chivo.ttf") format("truetype");
+  }
+}
+
+@layer utilities {
+  .c-n {
+    @apply cursor-none;
+  }
+
+  .c-p {
+    @apply cursor-pointer;
+  }
+
+  .text-active {
+    @apply text-color2;
+  }
+
+  b {
+    @apply tracking-[-2px] font-[600];
+  }
+}
+
+.stairs .transition-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.stairs .transition-container div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+.stairs .transition-text {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: wheat;
+}
+
+.stairs .transition-background {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 998;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
