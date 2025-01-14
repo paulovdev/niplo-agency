@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { CursorProvider } from "@/context/cursor-context";
 import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";

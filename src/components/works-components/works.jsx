@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { motion } from "framer-motion";
 import { useCursor } from "@/context/cursor-context";
 import worksData from "@/data/worksData";

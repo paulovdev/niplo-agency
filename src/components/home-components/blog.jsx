@@ -1,7 +1,7 @@
+"use client"
 import { motion } from "motion/react";
 
 import Image from "next/image";
-import Link from "next/link";
 import SectionText from "../reusable/section-text";
 
 export default function Blog() {
@@ -40,23 +40,13 @@ export default function Blog() {
       },
     },
   };
-  /* 
-        const expand = {
-            hover: {
-                width: "100%",
-                transition: { duration: 0.5, type: "spring", ease: [0.76, 0, 0.24, 1] },
-            },
-            initial: {
-                width: "50%",
-            }
-        }; */
 
   return (
     <>
       <SectionText
         text="newsroom"
         src="/blog"
-        link="all blogs"
+        linkText="all blogs"
         linkBol={true}
       />
 

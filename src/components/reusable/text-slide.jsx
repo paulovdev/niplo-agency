@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { RiArrowRightDownLine } from "react-icons/ri";

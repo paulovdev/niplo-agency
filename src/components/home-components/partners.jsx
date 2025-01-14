@@ -48,7 +48,7 @@ const Partners = () => {
       <SectionText
         text="Selected Partners"
         src="/partners"
-        link="all partners"
+        linkText="all partners"
         linkBol={true}
       />
 

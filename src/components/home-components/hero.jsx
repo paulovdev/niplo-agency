@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import TextSlide from "../reusable/text-slide";
 

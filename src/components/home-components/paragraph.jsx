@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -55,7 +55,7 @@ const Paragraph = () => {
       <SectionText
         text="about us"
         src="/works"
-        link="all works"
+        linkText="all works"
         linkBol={false}
       />
       <div ref={ref} className="w-full">

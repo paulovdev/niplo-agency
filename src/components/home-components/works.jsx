@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { motion } from "framer-motion";
 import { useCursor } from "@/context/cursor-context";
 import SectionText from "../reusable/section-text";
@@ -55,9 +55,9 @@ const Works = () => {
   return (
     <section className="pb-[50px] select-none pointer-events-none">
       <SectionText
-        text="Select works"
+        text="Selected works"
         src="/works"
-        link="all works"
+        linkText="all works"
         linkBol={true}
       />
 
