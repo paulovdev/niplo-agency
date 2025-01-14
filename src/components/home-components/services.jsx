@@ -54,14 +54,14 @@ const Services = () => {
                 onMouseEnter={() => setActiveService(service.id)}
                 className={`${
                   service.id === activeService ? "text-color" : "text-color2"
-                } text-[3rem] font-[500] tracking-[-1px] select-none transition-all  max-tablet:text-[2rem]`}
+                } text-[3rem] font-[500] uppercase tracking-[-1px] select-none transition-all  max-tablet:text-[2rem]`}
               >
                 {service.title}
               </motion.h1>
             ))}
           </div>
 
-          <div className="size-full  flex items-end justify-end">
+          <div className="size-full flex items-end justify-end">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeService}

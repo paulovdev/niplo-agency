@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -56,7 +56,7 @@ const MaskBackground = ({ src, title }) => {
         </div>
 
         <div className="background-text absolute left-1/2 top-1/2 z-20 -translate-x-1/2 opacity-0">
-          <h1 className="text-color3 text-center text-[3rem] font-[400] tracking-[-1px] leading-[1]">
+          <h1 className="text-color3 text-center text-[3rem] uppercase font-[500] tracking-[-1px] leading-[1]">
             {title}
           </h1>
         </div>

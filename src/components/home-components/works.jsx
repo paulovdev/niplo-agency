@@ -28,7 +28,7 @@ const Work = ({ year, name, category, src, color, id }) => {
     >
       <div className="relative w-full flex items-center justify-between">
         <div className="w-[25%] flex justify-start">
-          <span className="text-color text-[1.5rem] font-[600] max-tablet:text-[.9rem]">
+          <span className="text-color font-gene text-[1rem] font-[600] tracking-[-1px] max-tablet:text-[.9rem]">
             /{year}
           </span>
         </div>
@@ -60,30 +60,6 @@ const Works = () => {
         linkText="all works"
         linkBol={true}
       />
-
-      <div className="c-p relative w-full h-fit">
-        <div className="relative w-full flex items-center justify-between">
-          <div className="w-[25%] flex justify-start">
-            <span className="font-general text-color text-[.8rem] font-[600] uppercase ">
-              year:
-            </span>
-          </div>
-
-          <div className="w-[25%] flex justify-start">
-            <h1 className="font-general text-color text-[.8rem] font-[600] uppercase ">
-              NAME:
-            </h1>
-          </div>
-
-          <div className="w-[50%] flex justify-end">
-            <p className="font-general text-color text-[.8rem] font-[600] uppercase ">
-              type:
-            </p>
-          </div>
-        </div>
-
-        <div className="pt-[2rem] border-b border-border" />
-      </div>
 
       <div className="size-full flex flex-col max-tablet:p-0 select-auto pointer-events-auto">
         {workDataLimited.map((i) => (

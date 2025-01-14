@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "motion/react";
 
 import Image from "next/image";
@@ -81,10 +81,10 @@ export default function Blog() {
               </span>
             </div>
 
-            <h2 className="pb-[.5rem] text-color text-[1.3rem] font-[500] tracking-[-.5px] leading-[1.1]">
+            <h2 className="pb-[.5rem] text-color font-chivo uppercase text-[1rem] font-[500] leading-[1.1]">
               {i.title}
             </h2>
-            <p className="text-color2 text-[1rem] font-[400] tracking-[-.5px] leading-[1.1]">
+            <p className="text-color2 text-[1rem] font-general font-[400] tracking-[-1px] leading-[1.1]">
               {i.description}
             </p>
           </div>

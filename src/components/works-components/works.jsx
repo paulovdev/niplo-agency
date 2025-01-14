@@ -28,7 +28,7 @@ const Work = ({ name, category, src, color, year }) => {
     >
       <div className="relative w-full flex items-center justify-between">
         <div className="w-[25%] flex justify-start">
-          <span className="text-color text-[1.5rem] font-[600] max-tablet:text-[.9rem]">
+          <span className="text-color font-gene text-[1rem] font-[600] tracking-[-1px] max-tablet:text-[.9rem]">
             /{year}
           </span>
         </div>

@@ -45,7 +45,7 @@ const WorkView = async ({ params: paramsPromise }) => {
               <h2 className="mb-[.5rem] font-chivo text-color font-[500] text-[1rem] uppercase">
                 About:
               </h2>
-              <p className="text-color2 text-[1rem] font-[400] tracking-[-.5px] leading-[1.1]">
+              <p className="text-color2 font-general text-[1rem] font-[400] tracking-[-1px] leading-[1.1]">
                 {works.description}
               </p>
             </div>
@@ -54,7 +54,7 @@ const WorkView = async ({ params: paramsPromise }) => {
               <h2 className="mb-[.5rem] font-chivo text-color font-[500] text-[1rem] uppercase">
                 Category:
               </h2>
-              <p className="text-color2 text-[1rem] font-[400] tracking-[-.5px] leading-[1.1]">
+              <p className="text-color2 font-general text-[1rem] font-[400] tracking-[-1px] leading-[1.1]">
                 {works.category}
               </p>
             </div>
@@ -63,7 +63,7 @@ const WorkView = async ({ params: paramsPromise }) => {
               <h2 className="mb-[.5rem] font-chivo text-color font-[500] text-[1rem] uppercase">
                 Client:
               </h2>
-              <p className="text-color2 text-[1rem] font-[400] tracking-[-.5px] leading-[1.1]">
+              <p className="text-color2 font-general text-[1rem] font-[400] tracking-[-1px] leading-[1.1]">
                 {works.client}
               </p>
             </div>
@@ -72,7 +72,7 @@ const WorkView = async ({ params: paramsPromise }) => {
               <h2 className="mb-[.5rem] font-chivo text-color font-[500] text-[1rem] uppercase">
                 Year:
               </h2>
-              <p className="text-color2 text-[1rem] font-[400] tracking-[-.5px] leading-[1.1]">
+              <p className="text-color2 font-general text-[1rem] font-[400] tracking-[-1px] leading-[1.1]">
                 {works.year}
               </p>
             </div>

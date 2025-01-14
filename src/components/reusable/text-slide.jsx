@@ -37,7 +37,7 @@ const TextSlide = ({ phrases, color, span, rightContentBol }) => {
           {phrases.map((phrase, index) => (
             <div key={index} className="overflow-hidden flex flex-col">
               <motion.h1
-                className={`max-w-[1200px] ${color} text-[6rem] font-[500] tracking-[-1px] leading-[1.2] max-tablet:text-[3rem] max-tablet:font-[600]`}
+                className={`max-w-[1200px] ${color} text-[5rem] font-[500] tracking-[-1px] leading-[1] max-tablet:text-[3rem] max-tablet:font-[600]`}
                 custom={index}
                 variants={animation}
                 initial="initial"

@@ -62,13 +62,13 @@ const Partners = () => {
           >
             <div className="w-full h-[100px] overflow-hidden">
               <motion.div
-                className="relative size-full  flex items-center justify-start flex-col"
+                className="relative size-full flex items-center justify-start flex-col"
                 variants={logoVariants}
               >
-                <span className="text-color text-[5rem] group-hover:text-color">
+                <span className="text-color text-[4rem] group-hover:text-color">
                   {icon.logo}
                 </span>
-                <span className="relative top-[65px] font-chivo text-color text-[1rem] uppercase font-[500] tracking-[1px] group-hover:text-color">
+                <span className="relative top-[65px] font-general text-color text-[1rem] uppercase font-[500] tracking-[1px] group-hover:text-color">
                   {icon.name}
                 </span>
               </motion.div>

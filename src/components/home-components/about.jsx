@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const phrases = [
-  "We are a <b>creative</b> agency collaborating",
-  "with brands to build insightful <b>strategies</b>",
-  "create <b>unique</b> designs and craft experiences",
-  "that bring <b>positive</b> change and value.",
+  "WE ARE A <B>CREATIVE</B> AGENCY COLLABORATING",
+  "WITH BRANDS TO BUILD INSIGHTFUL <B>STRATEGIES</B>",
+  "CREATE <B>UNIQUE</B> DESIGNS AND CRAFT EXPERIENCES",
+  "THAT BRING <B>POSITIVE</B> CHANGE AND VALUE.",
 ];
 
 const About = () => {

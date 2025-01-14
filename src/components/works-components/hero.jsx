@@ -9,7 +9,7 @@ export default function Hero() {
         </span>
         <TextSlide
           color="text-color"
-          phrases={["All Works"]}
+          phrases={["ALL WORKS"]}
           span="(12 ARCHIVES)"
           rightContentBol={true}
         />
