@@ -75,8 +75,8 @@ const Services = () => {
                     services.find((service) => service.id === activeService)
                       ?.src
                   }
-                  width={1600}
-                  height={1200}
+                  width={700}
+                  height={500}
                   loop
                   muted
                   autoPlay

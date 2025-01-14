@@ -30,10 +30,10 @@ export default function Blogs() {
                 <div className="relative size-full  mb-[4rem]" key={i.title}>
                     <motion.div variants={imgZoom} custom={index} whileHover="hover">
                         <Image
-                            className="relative w-full h-[700px] mb-[1.5rem] rounded-[1rem] object-cover brightness-[85%] select-none"
+                            className="relative w-full h-[500px] mb-[1.5rem] rounded-[1rem] object-cover brightness-[85%] select-none"
                             src={i.img}
-                            width={800}
-                            height={800}
+                            width={500}
+                            height={500}
                             priority={true}
                             alt=""
                         />
