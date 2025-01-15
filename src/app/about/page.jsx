@@ -1,7 +1,7 @@
 import Hero from '../../components/about-components/hero';
 import Partners from '../../components/home-components/partners';
 import Services from '../../components/home-components/services';
-import MaskBackground from '@/components/reusable/mask-background';
+
 import { Shape } from "@/utils/shape";
 const About = () => {
     return (
