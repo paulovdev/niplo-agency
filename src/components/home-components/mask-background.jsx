@@ -36,7 +36,7 @@ const MaskBackground = ({ src, title }) => {
     });
     clipAnimation.to(".background-text-2 ", {
       opacity: 1,
-      top: "40%",
+      top: "30%",
     });
   });
 
@@ -47,7 +47,7 @@ const MaskBackground = ({ src, title }) => {
     >
       <div className="w-screen h-dvh" id="clip">
         <div
-          className="image-background absolute left-1/2 top-0 z-20 h-[100vh] origin-center -translate-x-1/2 overflow-hidden rounded-[2rem] max-tablet:w-[30vw]"
+          className="image-background absolute left-1/2 top-0 z-20 h-[100vh] origin-center -translate-x-1/2 overflow-hidden rounded-[1rem] max-tablet:w-[30vw]"
           style={{ width: "100%", filter: "brightness(100%)" }}
         >
           <video
@@ -69,7 +69,7 @@ const MaskBackground = ({ src, title }) => {
           />
         </div>
 
-        <div className="background-text-2 absolute w-screen h-fit left-[60%] top-[65%] z-20  opacity-0">
+        <div className="background-text-2 absolute w-screen h-fit left-[50%] top-[50%] z-20  opacity-0 max-tablet:left-0">
           <About />
         </div>
       </div>

@@ -12,7 +12,7 @@ function Cursor({ refPos }) {
   const mouse = useMouse(refPos, {
     enterDelay: 50,
     leaveDelay: 50,
-    fps: 60,
+    fps: 30,
   });
 
   let mouseXPosition = 0;
