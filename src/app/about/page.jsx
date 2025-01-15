@@ -11,10 +11,6 @@ const About = () => {
                 <Hero />
             </div>
 
-            <MaskBackground src="/about/bg-3.jpg" title="A good agency" />
-
-
-
             <div className="p-[2.5rem]">
                 <Partners />
                 <Services />
