@@ -3,34 +3,9 @@ import { motion } from "motion/react";
 
 import Image from "next/image";
 import SectionText from "../reusable/section-text";
+import blogsData from "@/data/blogsData";
 
 export default function Blog() {
-  const blogs = [
-    {
-      title: "Mush Energy just won 2 gold awards ",
-      description:
-        "In the ever-evolving landscape of branding, advertising, and digital experiences, we find ourselves at a crossroads between mere creation and profound impact. As architects of this",
-      category: "SPORTS",
-      min: "5 MINS",
-      img: "/blog/blog-1.avif",
-    },
-    {
-      title: "How Aesop has reshaped the industry",
-      description:
-        "In the ever-evolving landscape of branding, advertising, and digital experiences, we find ourselves at a crossroads between mere creation and profound impact. As architects of this",
-      category: "DESIGN",
-      min: "3 MINS",
-      img: "/blog/blog-2.avif",
-    },
-    {
-      title: "How creator nike connects with their fans",
-      description:
-        "In the ever-evolving landscape of branding, advertising, and digital experiences, we find ourselves at a crossroads between mere creation and profound impact. As architects of this",
-      category: "INSIGHTS",
-      min: "8 MINS",
-      img: "/blog/blog-3.avif",
-    },
-  ];
   const imgZoom = {
     hover: {
       skew: 1,
@@ -51,7 +26,7 @@ export default function Blog() {
       />
 
       <div className="mb-[100px] grid grid-cols-3 gap-[1.5rem] max-tablet:grid-cols-1">
-        {blogs.map((i, index) => (
+        {blogsData.map((i, index) => (
           <div
             className="relative size-full mb-[4rem] max-tablet:mb-0"
             key={i.title}
@@ -73,7 +48,7 @@ export default function Blog() {
             </motion.div>
 
             <div className="absolute top-5 left-5 mb-[1rem] flex items-center gap-[1rem]">
-              <p className="px-[1rem] py-[.5rem] text-color text-end text-[.7rem] font-[500] tracking-[1px] leading-[1] bg-background rounded-[2rem]">
+              <p className="px-[1rem] font-chivo py-[.5rem] text-color text-end text-[.7rem] font-[500] tracking-[1px] leading-[1] bg-background rounded-[2rem]">
                 {i.category}
               </p>
               <span className="text-color3 text-end text-[.7rem] font-[500] tracking-[1px] leading-[1]">
@@ -81,10 +56,10 @@ export default function Blog() {
               </span>
             </div>
 
-            <h2 className="pb-[.5rem] text-color font-chivo uppercase text-[1rem] font-[500] leading-[1.1]">
+            <h2 className="pb-[.5rem] text-color font-general uppercase text-[1rem] tracking-[-.5px] font-[500] leading-[1.1]">
               {i.title}
             </h2>
-            <p className="text-color2 text-[.9rem] font-general font-[400] tracking-[-1px] leading-[1.1]">
+            <p className="text-color2 text-[.9rem] font-[400] leading-[1.3]">
               {i.description}
             </p>
           </div>

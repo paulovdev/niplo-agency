@@ -3,32 +3,11 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionText from "../reusable/section-text";
+import servicesData from "@/data/servicesData";
+import Image from "next/image";
 
 const Services = () => {
   const [activeService, setActiveService] = useState(1);
-
-  const services = [
-    {
-      src: "/services/services-video-1.mp4",
-      title: "Creative Excellence",
-      id: 1,
-    },
-    {
-      src: "/services/services-video-2.mp4",
-      title: "Customized Solutions",
-      id: 2,
-    },
-    {
-      src: "/services/services-video-3.mp4",
-      title: "Full-Stack Expertise",
-      id: 3,
-    },
-    {
-      src: "/services/services-video-4.mp4",
-      title: "Transparent Communication",
-      id: 4,
-    },
-  ];
 
   const anim = {
     enter: {
@@ -48,7 +27,7 @@ const Services = () => {
       <div className="flex items-start justify-between">
         <div className="relative w-full flex items-center justify-between gap-[1.5rem] max-tablet:flex-col ">
           <div className="size-full">
-            {services.map((service) => (
+            {servicesData.map((service) => (
               <motion.h1
                 key={service.id}
                 onMouseEnter={() => setActiveService(service.id)}
@@ -72,16 +51,14 @@ const Services = () => {
                 animate="enter"
                 exit="exit"
               >
-                <video
+                <Image
                   src={
-                    services.find((service) => service.id === activeService)
+                    servicesData.find((service) => service.id === activeService)
                       ?.src
                   }
-                  width={700}
+                  alt={`${servicesData.src}`}
+                  width={500}
                   height={500}
-                  loop
-                  muted
-                  autoPlay
                   className="w-[800px] h-[550px] object-cover rounded-[1rem] border border-border max-tablet:h-[400px]"
                 />
               </motion.div>

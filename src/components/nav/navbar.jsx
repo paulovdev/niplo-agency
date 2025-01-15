@@ -50,7 +50,7 @@ const PerspectiveMenu = ({ label, color, delayed }) => {
 export default function Nav() {
   const [menuToggle, setMenuToggle] = useState(false);
   const pathname = usePathname();
-  const isAboutRoute = pathname === "/about" || pathname === "/blog";
+  const isAboutRoute = pathname === "/about";
   const isWorksRoute = /^\/works\/.+$/.test(pathname);
   const isRouteValid = isAboutRoute || isWorksRoute;
 
