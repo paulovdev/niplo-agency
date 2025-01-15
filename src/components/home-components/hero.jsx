@@ -14,7 +14,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="max-w-[600px] max-tablet:mt-[1rem]">
+        <div className="max-w-[600px] max-tablet:mt-[6rem]">
           <p className="text-color font-general text-[1rem] font-[500] tracking-[-.2px] leading-[1.4]">
             ART DIRECTOR AND DESIGNER BASED IN PARIS, PRIMARILY FOCUSING ON
             CREATING TIMELESS IDENTITIES FOR BRANDS.

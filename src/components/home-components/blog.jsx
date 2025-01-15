@@ -84,7 +84,7 @@ export default function Blog() {
             <h2 className="pb-[.5rem] text-color font-chivo uppercase text-[1rem] font-[500] leading-[1.1]">
               {i.title}
             </h2>
-            <p className="text-color2 text-[1rem] font-general font-[400] tracking-[-1px] leading-[1.1]">
+            <p className="text-color2 text-[.9rem] font-general font-[400] tracking-[-1px] leading-[1.1]">
               {i.description}
             </p>
           </div>

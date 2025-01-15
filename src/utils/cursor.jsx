@@ -89,7 +89,7 @@ function Cursor({ refPos }) {
                     alt=""
                   />
                   <div className="absolute w-[100px] h-[100px] backdrop-blur-xl rounded-full flex items-center justify-center">
-                    <p className="text-color3 text-[.8rem] font-general uppercase">
+                    <p className="text-color3 text-[.8rem] tracking-[-.5px] font-general uppercase">
                       view
                     </p>
                   </div>

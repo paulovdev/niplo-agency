@@ -40,7 +40,7 @@ const Work = ({ year, name, category, src, color, id }) => {
         </div>
 
         <div className="w-[50%] flex justify-end">
-          <p className="text-color text-[1rem] font-[500] max-tablet:text-[.9rem]">
+          <p className="text-color text-[.9rem] font-general font-[500] tracking-[-.5px] uppercase max-tablet:text-[.9rem]">
             {category}
           </p>
         </div>

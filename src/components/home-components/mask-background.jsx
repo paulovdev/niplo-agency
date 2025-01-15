@@ -2,10 +2,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import About from "./about";
+import TextSlide from "@/components/reusable/text-slide";
 
 const MaskBackground = ({ src, title }) => {
-  /* if (window.innerWidth > 768) { } */
-
   if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
@@ -26,11 +26,17 @@ const MaskBackground = ({ src, title }) => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
+      filter: "brightness(60%)",
     });
 
-    clipAnimation.to(".background-text ", {
-      scale: "1.5",
+    clipAnimation.to(".background-text-1 ", {
+      scale: "1.2",
       opacity: 1,
+      left: "10%",
+    });
+    clipAnimation.to(".background-text-2 ", {
+      opacity: 1,
+      top: "40%",
     });
   });
 
@@ -42,7 +48,7 @@ const MaskBackground = ({ src, title }) => {
       <div className="w-screen h-dvh" id="clip">
         <div
           className="image-background absolute left-1/2 top-0 z-20 h-[100vh] origin-center -translate-x-1/2 overflow-hidden rounded-[2rem] max-tablet:w-[30vw]"
-          style={{ width: "100%" }}
+          style={{ width: "100%", filter: "brightness(100%)" }}
         >
           <video
             className="img-bg absolute top-0 left-0 size-full object-cover"
@@ -55,10 +61,16 @@ const MaskBackground = ({ src, title }) => {
           />
         </div>
 
-        <div className="background-text absolute left-1/2 top-1/2 z-20 -translate-x-1/2 opacity-0">
-          <h1 className="text-color3 text-center text-[3rem] uppercase font-[500] tracking-[-1px] leading-[1]">
-            {title}
-          </h1>
+        <div className="background-text-1 absolute w-screen h-fit left-[25%] top-[80%] z-20  opacity-0">
+          <TextSlide
+            color="text-color3"
+            phrases={["LIKE YOURS"]}
+            rightContentBol={false}
+          />
+        </div>
+
+        <div className="background-text-2 absolute w-screen h-fit left-[60%] top-[65%] z-20  opacity-0">
+          <About />
         </div>
       </div>
     </section>

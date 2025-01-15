@@ -68,18 +68,18 @@ const Partners = () => {
                 <span className="text-color text-[4rem] group-hover:text-color">
                   {icon.logo}
                 </span>
-                <span className="relative top-[65px] font-general text-color text-[1rem] uppercase font-[500] tracking-[1px] group-hover:text-color">
+                <span className="relative top-[65px] font-general text-color text-[.9rem] uppercase font-[500] tracking-[-.5px] group-hover:text-color">
                   {icon.name}
                 </span>
               </motion.div>
             </div>
 
             <motion.div
-              className="absolute w-[40px] h-[40px] top-[25px] right-[25px] bg-background rounded-full flex items-center justify-center"
+              className="absolute w-[40px] h-[40px] top-[25px] right-[25px] bg-background3 rounded-full flex items-center justify-center"
               key={icon.id}
               variants={opacityVariants}
             >
-              <BsPlus color="#333333" size={32} />
+              <BsPlus color="#fff" size={32} />
             </motion.div>
           </motion.div>
         ))}

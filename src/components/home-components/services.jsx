@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -54,9 +54,11 @@ const Services = () => {
                 onMouseEnter={() => setActiveService(service.id)}
                 className={`${
                   service.id === activeService ? "text-color" : "text-color2"
-                } text-[3rem] font-[500] uppercase tracking-[-1px] select-none transition-all  max-tablet:text-[2rem]`}
+                } text-[2.5rem] font-[500] uppercase tracking-[-1px] select-none transition-all  max-tablet:text-[2rem]`}
               >
-                {service.title}
+                {service.id === activeService
+                  ? service.title + "."
+                  : service.title}
               </motion.h1>
             ))}
           </div>

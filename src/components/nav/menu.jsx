@@ -45,7 +45,7 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
       },
     },
     open: {
-      height: "60vh",
+      height: "75vh",
       transition: {
         duration: 0.8,
         type: "tween",

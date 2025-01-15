@@ -59,9 +59,16 @@ body {
   .text-active {
     @apply text-color2;
   }
-
-  b {
-    @apply tracking-[-2px] font-[600];
+  .about-text {
+    h1 {
+      @apply text-[2rem] font-[600] tracking-[-1px] leading-[1.2] max-tablet:text-[2rem] max-mobile:text-[1.7rem];
+    }
+    p {
+      @apply max-w-[600px] text-[1.25rem] font-[400] tracking-[-1px] leading-[1.4] max-tablet:text-[2rem];
+    }
+    b {
+      @apply tracking-[-1px] font-[600];
+    }
   }
 }
 
@@ -74,7 +81,6 @@ body {
   top: 0;
   pointer-events: none;
   z-index: 999;
-  
 }
 
 .stairs .transition-container div {

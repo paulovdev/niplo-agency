@@ -8,12 +8,12 @@ const SectionText = ({ text, src, linkText, linkBol }) => {
 
   return (
     <div className="w-full mb-[2.5rem] flex items-center justify-between select-none pointer-events-none">
-      <h2 className="font-general text-color text-[.9rem] font-[600] uppercase ">
+      <h2 className="font-general text-color text-[.9rem] tracking-[-.5px] font-[600] uppercase ">
         {text}
       </h2>
       {isLinkActive && (
         <Link
-          className="px-[1.3rem] py-[.3rem] font-chivo text-color text-[.75rem] font-[500] uppercase border border-border rounded-[2rem] select-auto pointer-events-auto"
+          className="px-[1.3rem] py-[.3rem] font-chivo text-color text-[.75rem] tracking-[-.1px] font-[500] uppercase border border-border rounded-[2rem] select-auto pointer-events-auto"
           href={src}
         >
           {linkText}
