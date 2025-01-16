@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import useMouse from "@react-hook/mouse-position";
 import { useCursor } from "@/context/cursor-context";
 import { useMedia } from "react-use";
-import DynamicImage from "@/components/reusable/dynamic-image";
+import Image from "next/image";
 
 function Cursor({ refPos }) {
   const { cursorVariant, cursorData, colorData } = useCursor();
@@ -16,8 +16,16 @@ function Cursor({ refPos }) {
     fps: 30,
   });
 
-  const mouseXPosition = mouse.x !== null ? mouse.clientX : 0;
-  const mouseYPosition = mouse.y !== null ? mouse.clientY : 0;
+  let mouseXPosition = 0;
+  let mouseYPosition = 0;
+
+  if (mouse.x !== null) {
+    mouseXPosition = mouse.clientX;
+  }
+
+  if (mouse.y !== null) {
+    mouseYPosition = mouse.clientY;
+  }
 
   const variants = {
     default: {
@@ -40,6 +48,7 @@ function Cursor({ refPos }) {
       opacity: 0,
       x: mouseXPosition - 5,
       y: mouseYPosition - 5,
+
       transition: { duration: 0.4 },
     },
   };
@@ -69,11 +78,15 @@ function Cursor({ refPos }) {
                   }}
                   className="absolute flex items-center justify-center overflow-hidden"
                 >
-                  <DynamicImage
-                    src={cursorData}
+                  <Image
+                    className="img-bg absolute top-0 left-0 size-full object-cover rounded-[1rem]"
                     width={350}
                     height={250}
-                    className="absolute top-0 left-0 size-full object-cover rounded-[1rem]"
+                    quality={60}
+                    priority
+                    id="current-video"
+                    src={cursorData}
+                    alt=""
                   />
                   <div className="absolute w-[100px] h-[100px] backdrop-blur-xl rounded-full flex items-center justify-center">
                     <p className="text-color3 text-[.8rem] tracking-[-.5px] font-general uppercase">

@@ -18,8 +18,8 @@ const WorkView = async ({ params: paramsPromise }) => {
           <DynamicImage
             src={works.src}
             alt={works.name}
-            width={1500}
-            height={1500}
+            width={1800}
+            height={1100}
             className="size-full object-center object-cover"
           />
           <div className="absolute bottom-6 left-1/2">
