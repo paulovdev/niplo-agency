@@ -8,6 +8,7 @@ const worksData = [
     description:
       "A captivating blend of motion and color, showcasing dynamic visual storytelling.",
     src: "/works/work-1.jpg",
+    srcView: "/works/work-view/work-1.jpg",
     alt: "project image 1",
     color: "linear-gradient(120deg, #13170B,#DCEAC3)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -21,6 +22,7 @@ const worksData = [
     description:
       "A futuristic exploration of digital environments and branding.",
     src: "/works/work-2.jpg",
+    srcView: "/works/work-view/work-2.jpg",
     alt: "project image 2",
     color: "linear-gradient(15deg, #75A6CC, #FDDFB2)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -34,6 +36,7 @@ const worksData = [
     description:
       "A sophisticated web platform with a focus on minimalism and functionality.",
     src: "/works/work-3.jpg",
+    srcView: "/works/work-view/work-3.jpg",
     alt: "project image 3",
     color: "linear-gradient(56deg, #A8D018, #202A0A)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -47,6 +50,7 @@ const worksData = [
     description:
       "Innovative urban web design capturing the essence of modern cityscapes.",
     src: "/works/work-4.jpg",
+    srcView: "/works/work-view/work-4.jpg",
     alt: "project image 4",
     color: "linear-gradient(135deg, #2A1A0B, #C37A1A",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -60,6 +64,7 @@ const worksData = [
     description:
       "Exploring the fusion of light and design through vibrant graphic elements.",
     src: "/works/work-5.jpg",
+    srcView: "/works/work-view/work-5.jpg",
     alt: "project image 5",
     color: "linear-gradient(135deg, #050505, #464E41)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -73,6 +78,7 @@ const worksData = [
     description:
       "An intuitive user interface and experience design for a seamless mobile app.",
     src: "/works/work-6.jpg",
+    srcView: "/works/work-view/work-6.jpg",
     alt: "project image 6",
     color: "linear-gradient(135deg, #110C10, #7C8491)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -86,6 +92,7 @@ const worksData = [
     description:
       "A core set of components built for a high-performance web app.",
     src: "/works/work-7.jpg",
+    srcView: "/works/work-view/work-7.jpg",
     alt: "project image 7",
     color: "linear-gradient(60deg,#B2B2B2,#E7E7E7)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -99,6 +106,7 @@ const worksData = [
     description:
       "Interactive elements bringing vibrant city experiences to life digitally.",
     src: "/works/work-8.jpg",
+    srcView: "/works/work-view/work-8.jpg",
     alt: "project image 8",
     color: "linear-gradient(10deg, #6F5E49, #727E74, #D7DDDD)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -112,6 +120,7 @@ const worksData = [
     description:
       "Creating a vibrant and unique visual identity with color as the core focus.",
     src: "/works/work-9.jpg",
+    srcView: "/works/work-view/work-9.jpg",
     alt: "project image 9",
     color: "linear-gradient(-10deg, #E1E7E3, #31C4C5, #565455)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -124,6 +133,7 @@ const worksData = [
     client: "Innovative Creatives",
     description: "A technological leap forward in creative content production.",
     src: "/works/work-10.jpg",
+    srcView: "/works/work-view/work-10.jpg",
     alt: "project image 10",
     color: "linear-gradient(25deg, #3D3D3D, #029466)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],

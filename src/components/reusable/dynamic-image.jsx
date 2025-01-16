@@ -13,7 +13,6 @@ function DynamicImage({
 }) {
   const [blur, setBlur] = useState(blurDataURL);
 
-  // Usar um efeito para definir o blurDataURL de forma assíncrona
   useEffect(() => {
     if (!blur && src) {
       const loadImage = async () => {
@@ -33,8 +32,7 @@ function DynamicImage({
     }
   }, [src, blur]);
 
-  // Verifique se o blurDataURL foi carregado
-  if (!blur) return <div>Loading...</div>; // Ou qualquer outro indicador de carregamento
+  if (!blur) return <div></div>; 
 
   return (
     <Image

@@ -1,7 +1,6 @@
 import DynamicImage from "@/components/reusable/dynamic-image";
 import TextSlide from "@/components/reusable/text-slide";
 import worksData from "@/data/worksData";
-import Image from "next/image";
 
 const WorkView = async ({ params: paramsPromise }) => {
   const params = await paramsPromise;
@@ -16,7 +15,7 @@ const WorkView = async ({ params: paramsPromise }) => {
       <div className="relative w-screen h-screen">
         <div className="absolute w-screen h-screen top-0 left-0">
           <DynamicImage
-            src={works.src}
+            src={works.srcView}
             alt={works.name}
             width={1800}
             height={1100}

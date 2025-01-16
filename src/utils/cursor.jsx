@@ -83,7 +83,7 @@ function Cursor({ refPos }) {
                     width={350}
                     height={250}
                     quality={60}
-                    priority
+                    priority={true}
                     id="current-video"
                     src={cursorData}
                     alt=""
