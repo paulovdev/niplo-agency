@@ -7,10 +7,10 @@ const worksData = [
     client: "ABC Studios",
     description:
       "A captivating blend of motion and color, showcasing dynamic visual storytelling.",
-    src: "/works/work-1.jpg",
-    srcView: "/works/work-view/work-1.jpg",
+    src: "/works/work-1.avif",
+    srcView: "/works/work-view/work-1.avif",
     alt: "project image 1",
-    color: "linear-gradient(120deg, #13170B,#DCEAC3)",
+    color: "linear-gradient(120deg, #40281A,#40281A)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
   },
   {
@@ -21,10 +21,10 @@ const worksData = [
     client: "Creative Agency",
     description:
       "A futuristic exploration of digital environments and branding.",
-    src: "/works/work-2.jpg",
-    srcView: "/works/work-view/work-2.jpg",
+    src: "/works/work-2.avif",
+    srcView: "/works/work-view/work-2.avif",
     alt: "project image 2",
-    color: "linear-gradient(15deg, #75A6CC, #FDDFB2)",
+    color: "linear-gradient(15deg, #7A808A, #7A808A)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
   },
   {
@@ -35,10 +35,10 @@ const worksData = [
     client: "WebTech Solutions",
     description:
       "A sophisticated web platform with a focus on minimalism and functionality.",
-    src: "/works/work-3.jpg",
-    srcView: "/works/work-view/work-3.jpg",
+    src: "/works/work-3.avif",
+    srcView: "/works/work-view/work-3.avif",
     alt: "project image 3",
-    color: "linear-gradient(56deg, #A8D018, #202A0A)",
+    color: "linear-gradient(56deg, #000501, #000501)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
   },
   {
@@ -49,10 +49,10 @@ const worksData = [
     client: "Urban Designs",
     description:
       "Innovative urban web design capturing the essence of modern cityscapes.",
-    src: "/works/work-4.jpg",
-    srcView: "/works/work-view/work-4.jpg",
+    src: "/works/work-4.avif",
+    srcView: "/works/work-view/work-4.avif",
     alt: "project image 4",
-    color: "linear-gradient(135deg, #2A1A0B, #C37A1A",
+    color: "linear-gradient(135deg, #121315, #121315",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
   },
   {
@@ -63,8 +63,8 @@ const worksData = [
     client: "Lumen Corp.",
     description:
       "Exploring the fusion of light and design through vibrant graphic elements.",
-    src: "/works/work-5.jpg",
-    srcView: "/works/work-view/work-5.jpg",
+    src: "/works/work-5.avif",
+    srcView: "/works/work-view/work-5.avif",
     alt: "project image 5",
     color: "linear-gradient(135deg, #050505, #464E41)",
     images: ["/works/works-single/bg.avif", "/works/works-single/bg.jpg"],
@@ -127,7 +127,7 @@ const worksData = [
   },
   {
     id: "10",
-    name: "NIKE©",
+    name: "Nike ©",
     category: "Creative Technology",
     year: 2024,
     client: "Innovative Creatives",

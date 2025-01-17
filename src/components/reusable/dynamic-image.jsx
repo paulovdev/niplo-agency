@@ -32,7 +32,7 @@ function DynamicImage({
     }
   }, [src, blur]);
 
-  if (!blur) return <div></div>; 
+  if (!blur) return <div></div>;
 
   return (
     <Image
@@ -40,6 +40,7 @@ function DynamicImage({
       alt={alt}
       width={width}
       height={height}
+      priority={true}
       className={className}
       placeholder="blur"
       blurDataURL={blur}

@@ -28,7 +28,7 @@ const Work = ({ year, name, category, src, color, id }) => {
     >
       <div className="relative w-full flex items-center justify-between">
         <div className="w-[25%] flex justify-start">
-          <span className="text-color font-gene text-[1rem] font-[600] tracking-[-1px] max-tablet:text-[.9rem]">
+          <span className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
             /{year}
           </span>
         </div>
@@ -40,7 +40,7 @@ const Work = ({ year, name, category, src, color, id }) => {
         </div>
 
         <div className="w-[50%] flex justify-end">
-          <p className="text-color text-[.9rem] font-general font-[500] tracking-[-.5px] uppercase max-tablet:text-[.9rem]">
+          <p className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
             {category}
           </p>
         </div>

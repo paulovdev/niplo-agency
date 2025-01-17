@@ -42,7 +42,7 @@ const MaskBackground = ({ src, title }) => {
 
   return (
     <section
-      className="min-h-screen w-screen px-[2.5rem] pb-[100px] flex items-center justify-center max-tablet:px-[1rem]"
+      className="min-h-screen w-screen px-[2.5rem] pb-[100px] flex items-center justify-center max-laptop:px-[1rem]"
       id="about"
     >
       <div className="w-screen h-dvh" id="clip">

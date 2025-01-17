@@ -70,6 +70,18 @@ body {
       @apply tracking-[-1px] font-[600];
     }
   }
+
+  .blog-text {
+    h1 {
+      @apply mb-[1rem] text-[2rem] font-[600] tracking-[-1px] leading-[1.2] uppercase max-tablet:text-[2rem] max-mobile:text-[1.5rem];
+    }
+    p {
+      @apply mb-[1rem] max-w-[800px] text-[1.25rem] font-[400] tracking-[-1px] leading-[1.4] max-tablet:text-[1.5rem];
+    }
+    b {
+      @apply tracking-[-1px] font-[600];
+    }
+  }
 }
 
 .stairs .transition-container {

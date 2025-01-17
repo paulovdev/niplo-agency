@@ -82,7 +82,7 @@ function Cursor({ refPos }) {
                     className="img-bg absolute top-0 left-0 size-full object-cover rounded-[1rem]"
                     width={350}
                     height={250}
-                    quality={60}
+                    quality={50}
                     priority={true}
                     id="current-video"
                     src={cursorData}

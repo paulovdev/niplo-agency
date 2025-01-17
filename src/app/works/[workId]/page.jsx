@@ -1,6 +1,7 @@
 import DynamicImage from "@/components/reusable/dynamic-image";
 import TextSlide from "@/components/reusable/text-slide";
 import worksData from "@/data/worksData";
+import Image from "next/image";
 
 const WorkView = async ({ params: paramsPromise }) => {
   const params = await paramsPromise;
@@ -17,12 +18,12 @@ const WorkView = async ({ params: paramsPromise }) => {
           <DynamicImage
             src={works.srcView}
             alt={works.name}
-            width={1800}
-            height={1100}
+            width={1920}
+            height={1080}
             className="size-full object-center object-cover"
           />
           <div className="absolute bottom-6 left-1/2">
-            <DynamicImage
+            <Image
               src="/mouse-scroll.gif"
               alt="Scroll indicator"
               width={35}
@@ -39,7 +40,7 @@ const WorkView = async ({ params: paramsPromise }) => {
               NIPLO APRESENTS
             </span>
             <TextSlide
-              color="text-color"
+              color="text-color !leading-[1.4]"
               phrases={[works.name]}
               rightContentBol={false}
             />

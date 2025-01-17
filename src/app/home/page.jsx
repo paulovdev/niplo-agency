@@ -12,14 +12,14 @@ import InViewAnimation from "@/utils/inview-anim";
 const Home = () => {
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      <div className="px-[2.5rem] max-tablet:p-[1rem]">
+      <div className="px-[2.5rem] max-laptop:p-[1rem]">
         <Hero />
       </div>
 
       <MaskBackground src="/bg-video1.mp4" title="Unlocking Potential" />
       {/*   <Logos /> */}
 
-      <div className="px-[2.5rem] max-tablet:px-[1rem]">
+      <div className="px-[2.5rem] max-laptop:px-[1rem]">
         <InViewAnimation>
           <Works />
         </InViewAnimation>
@@ -28,7 +28,7 @@ const Home = () => {
         <Partners />
       </div>
 
-      <div className="px-[2.5rem] max-tablet:px-[1rem]">
+      <div className="px-[2.5rem] max-laptop:px-[1rem]">
         <Blog />
       </div>
     </main>

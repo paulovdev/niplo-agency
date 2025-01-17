@@ -3,6 +3,7 @@ import blogsData from "@/data/blogsData";
 import { motion } from "framer-motion";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Blogs() {
   const imgZoom = {
@@ -18,42 +19,41 @@ export default function Blogs() {
   return (
     <div className="mb-[100px] grid grid-cols-3 gap-[1.5rem] max-tablet:grid-cols-1">
       {blogsData.map((i, index) => (
-        <div
-          className="relative size-full mb-[4rem] max-tablet:mb-0"
-          key={i.title}
-        >
-          <motion.div
-            className=""
-            variants={imgZoom}
-            custom={index}
-            whileHover="hover"
-          >
-            <Image
-              className="relative w-full h-[500px] mb-[1.5rem] rounded-[.5rem] object-cover brightness-[85%] select-none"
-              src={i.img}
-              width={800}
-              height={800}
-              priority={true}
-              alt=""
-            />
-          </motion.div>
+        <Link href={`/blog/${i.id}`} key={i.title}>
+          <div className="relative size-full mb-[4rem] max-tablet:mb-0">
+            <motion.div
+              className=""
+              variants={imgZoom}
+              custom={index}
+              whileHover="hover"
+            >
+              <Image
+                className="relative w-full h-[500px] mb-[1.5rem] rounded-[.5rem] object-cover brightness-[85%] select-none"
+                src={i.img}
+                width={800}
+                height={800}
+                priority={true}
+                alt=""
+              />
+            </motion.div>
 
-          <div className="absolute top-5 left-5 mb-[1rem] flex items-center gap-[1rem]">
-            <p className="px-[1rem] font-chivo py-[.5rem] text-color text-end text-[.7rem] font-[500] tracking-[1px] leading-[1] bg-background rounded-[2rem]">
-              {i.category}
+            <div className="absolute top-5 left-5 mb-[1rem] flex items-center gap-[1rem]">
+              <p className="px-[1rem] font-chivo py-[.5rem] text-color text-end text-[.7rem] font-[500] tracking-[1px] leading-[1] bg-background rounded-[2rem]">
+                {i.category}
+              </p>
+              <span className="text-color3 text-end text-[.7rem] font-[500] tracking-[1px] leading-[1]">
+                {i.min}
+              </span>
+            </div>
+
+            <h2 className="pb-[.5rem] text-color font-general uppercase text-[1rem] tracking-[-.5px] font-[500] leading-[1.1]">
+              {i.title}
+            </h2>
+            <p className="text-color2 text-[.9rem] font-[400] leading-[1.3]">
+              {i.titleDescription}
             </p>
-            <span className="text-color3 text-end text-[.7rem] font-[500] tracking-[1px] leading-[1]">
-              {i.min}
-            </span>
           </div>
-
-          <h2 className="pb-[.5rem] text-color font-general uppercase text-[1rem] tracking-[-.5px] font-[500] leading-[1.1]">
-            {i.title}
-          </h2>
-          <p className="text-color2 text-[.9rem] font-[400] leading-[1.3]">
-            {i.description}
-          </p>
-        </div>
+        </Link>
       ))}
     </div>
   );

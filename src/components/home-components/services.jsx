@@ -59,7 +59,7 @@ const Services = () => {
                   alt={`${servicesData.src}`}
                   width={500}
                   height={500}
-                  className="w-[800px] h-[550px] object-cover rounded-[1rem] border border-border max-tablet:h-[400px]"
+                  className="w-[900px] h-[650px] object-cover rounded-[1rem] border border-border max-tablet:h-[400px]"
                 />
               </motion.div>
             </AnimatePresence>

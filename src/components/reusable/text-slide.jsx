@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { RiArrowRightDownLine } from "react-icons/ri";
@@ -37,7 +37,8 @@ const TextSlide = ({ phrases, color, span, rightContentBol }) => {
           {phrases.map((phrase, index) => (
             <div key={index} className="overflow-hidden flex flex-col">
               <motion.h1
-                className={`max-w-[1200px] ${color} text-[5rem] font-[500] tracking-[-1px] leading-[1] max-tablet:text-[3rem] max-tablet:font-[600]`}
+                className={`max-w-[1200px] ${color} text-[5rem] font-[500] tracking-[-1px] leading-[1] 
+                  max-desktop:text-[4rem]  max-tablet:text-[3rem] max-tablet:font-[600]`}
                 custom={index}
                 variants={animation}
                 initial="initial"
