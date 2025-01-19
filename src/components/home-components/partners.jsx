@@ -1,34 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BsPlus } from "react-icons/bs";
-import { FaApple, FaGoogle, FaAmazon, FaMicrosoft } from "react-icons/fa";
 import SectionText from "../reusable/section-text";
-
-const icons = [
-  {
-    id: 1,
-    logo: <FaApple />,
-    name: "Apple",
-  },
-  {
-    id: 2,
-    logo: <FaGoogle />,
-    name: "Google",
-  },
-  {
-    id: 3,
-    logo: <FaAmazon />,
-    name: "Amazon",
-  },
-  {
-    id: 4,
-    logo: <FaMicrosoft />,
-    name: "Microsoft",
-  },
-];
+import iconsData from "@/data/iconsData";
+import Image from "next/image";
+import { useInView } from "react-intersection-observer";
+import { appearAnimY } from "@/utils/anim";
 
 const Partners = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+    triggerOnce: true,
+  });
+
   const logoVariants = {
     hover: {
       top: "-100%",
@@ -39,12 +23,11 @@ const Partners = () => {
     },
   };
 
-  const opacityVariants = {
-    hover: { opacity: 1 },
-    initial: { opacity: 0 },
-  };
   return (
-    <section className="pb-[150px] mb-[50px] border-b border-border max-tablet:pb-[100px]">
+    <section
+      className="pb-[150px] mb-[50px] border-b border-border max-tablet:pb-[100px]"
+      ref={ref}
+    >
       <SectionText
         text="Selected Partners"
         src="/partners"
@@ -52,38 +35,40 @@ const Partners = () => {
         linkBol={true}
       />
 
-      <div className="w-full flex items-center gap-[1.5rem] max-tablet:flex-col">
-        {icons.map((icon) => (
+      <motion.div
+        className="w-full flex items-center gap-[1.5rem] max-tablet:flex-col"
+        variants={appearAnimY}
+        initial="initial"
+        animate={inView ? "animate" : ""}
+      >
+        {iconsData.slice(0, 4).map((icon) => (
           <motion.div
             key={icon.id}
-            className={`relative w-full h-[400px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group max-tablet:h-[300px]`}
+            className={`relative w-full h-[250px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group `}
             initial="initial"
             whileHover="hover"
           >
-            <div className="w-full h-[100px] overflow-hidden">
+            <div className="w-full h-[120px] overflow-hidden">
               <motion.div
-                className="relative size-full flex items-center justify-start flex-col"
+                className="relative w-[350px] h-full mx-auto flex items-center justify-center flex-col"
                 variants={logoVariants}
               >
-                <span className="text-color text-[4rem] group-hover:text-color">
-                  {icon.logo}
-                </span>
-                <span className="relative top-[65px] font-general text-color text-[.9rem] uppercase font-[500] tracking-[-.5px] group-hover:text-color">
+                <Image
+                  src={icon.logo}
+                  width={150}
+                  height={150}
+                  alt={icon.logo}
+                  className="relative top-[20px] w-[200px] h-[60px] object-center object-contain"
+                />
+
+                <span className="relative top-[90px] text-start text-color text-[1rem] font-[400] tracking-[-.2px] leading-[1.4] max-laptop:text-[.8rem] group-hover:text-color">
                   {icon.name}
                 </span>
               </motion.div>
             </div>
-
-            <motion.div
-              className="absolute w-[40px] h-[40px] top-[25px] right-[25px] bg-background3 rounded-full flex items-center justify-center"
-              key={icon.id}
-              variants={opacityVariants}
-            >
-              <BsPlus color="#fff" size={32} />
-            </motion.div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionText from "../reusable/section-text";
 import servicesData from "@/data/servicesData";
@@ -21,25 +21,40 @@ const Services = () => {
   };
 
   return (
-    <section className="w-full h-fit mb-[100px] mx-auto my-0 ">
-      <SectionText text="services" linkBol={false} />
+    <section className="w-full h-fit pb-[100px] mb-[50px] mx-auto my-0 border-b border-border">
+      <SectionText text="our services" linkBol={false} marginBottom={0} />
 
       <div className="flex items-start justify-between">
         <div className="relative w-full flex items-center justify-between gap-[1.5rem] max-tablet:flex-col ">
           <div className="size-full">
-            {servicesData.map((service) => (
-              <motion.h1
-                key={service.id}
-                onMouseEnter={() => setActiveService(service.id)}
-                className={`${
-                  service.id === activeService ? "text-color" : "text-color2"
-                } text-[2.5rem] font-[500] uppercase tracking-[-1px] select-none transition-all  max-tablet:text-[2rem]`}
-              >
-                {service.id === activeService
-                  ? service.title + "."
-                  : service.title}
-              </motion.h1>
-            ))}
+            {servicesData.map((service) => {
+              const servicePersonalized = (
+                <span className="text-[.8rem] font-[600] font-chivo">
+                  &#91;{service.id}&#93;
+                </span>
+              );
+
+              return (
+                <Fragment key={service.id}>
+                  <motion.h1
+                    onMouseEnter={() => setActiveService(service.id)}
+                    className={`${
+                      service.id === activeService
+                        ? "text-color"
+                        : "text-color2"
+                    } text-[2.5rem] font-[500] uppercase tracking-[-1px] select-none transition-all max-tablet:text-[2rem]`}
+                  >
+                    {service.id === activeService ? (
+                      <>
+                        {servicePersonalized} {service.title}
+                      </>
+                    ) : (
+                      service.title
+                    )}
+                  </motion.h1>
+                </Fragment>
+              );
+            })}
           </div>
 
           <div className="size-full flex items-end justify-end">

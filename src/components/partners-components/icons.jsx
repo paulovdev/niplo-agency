@@ -1,102 +1,8 @@
 "use client";
 
+import iconsData from "@/data/iconsData";
 import { motion } from "framer-motion";
-import { BsPlus } from "react-icons/bs";
-import {
-  FaApple,
-  FaGoogle,
-  FaAmazon,
-  FaMicrosoft,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-  FaSpotify,
-  FaSnapchat,
-  FaPinterest,
-  FaTiktok,
-  FaReddit,
-  FaSlack,
-} from "react-icons/fa";
-
-const icons = [
-  {
-    id: 1,
-    logo: <FaApple />,
-    name: "Apple",
-  },
-  {
-    id: 2,
-    logo: <FaGoogle />,
-    name: "Google",
-  },
-  {
-    id: 3,
-    logo: <FaAmazon />,
-    name: "Amazon",
-  },
-  {
-    id: 4,
-    logo: <FaMicrosoft />,
-    name: "Microsoft",
-  },
-  {
-    id: 5,
-    logo: <FaFacebook />,
-    name: "Facebook",
-  },
-  {
-    id: 6,
-    logo: <FaTwitter />,
-    name: "Twitter",
-  },
-  {
-    id: 7,
-    logo: <FaInstagram />,
-    name: "Instagram",
-  },
-  {
-    id: 8,
-    logo: <FaLinkedin />,
-    name: "LinkedIn",
-  },
-  {
-    id: 9,
-    logo: <FaYoutube />,
-    name: "YouTube",
-  },
-  {
-    id: 10,
-    logo: <FaSpotify />,
-    name: "Spotify",
-  },
-  {
-    id: 11,
-    logo: <FaSnapchat />,
-    name: "Snapchat",
-  },
-  {
-    id: 12,
-    logo: <FaPinterest />,
-    name: "Pinterest",
-  },
-  {
-    id: 13,
-    logo: <FaTiktok />,
-    name: "TikTok",
-  },
-  {
-    id: 14,
-    logo: <FaReddit />,
-    name: "Reddit",
-  },
-  {
-    id: 15,
-    logo: <FaSlack />,
-    name: "Slack",
-  },
-];
+import Image from "next/image";
 
 const logoVariants = {
   hover: {
@@ -108,43 +14,35 @@ const logoVariants = {
   },
 };
 
-const opacityVariants = {
-  hover: { opacity: 1 },
-  initial: { opacity: 0 },
-};
-
 export default function Icons() {
   return (
     <>
       <div className="w-full bg-background grid grid-cols-4 gap-[1.5rem] max-tablet:grid-cols-2">
-        {icons.map((icon) => (
+        {iconsData.map((icon) => (
           <motion.div
             key={icon.id}
-            className={`relative w-full h-[400px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group max-tablet:h-[300px]`}
+            className={`relative w-full h-[250px] bg-background2 rounded-[1rem] flex items-center justify-center cursor-pointer z-10 group `}
             initial="initial"
             whileHover="hover"
           >
-            <div className="w-full h-[100px] overflow-hidden">
+            <div className="w-full h-[120px] overflow-hidden">
               <motion.div
-                className="relative size-full flex items-center justify-start flex-col"
+                className="relative w-[350px] h-full mx-auto flex items-center justify-center flex-col"
                 variants={logoVariants}
               >
-                <span className="text-color text-[4rem] group-hover:text-color">
-                  {icon.logo}
-                </span>
-                <span className="relative top-[65px] font-general text-color text-[.9rem] uppercase font-[500] tracking-[-.5px] group-hover:text-color">
+                <Image
+                  src={icon.logo}
+                  width={150}
+                  height={150}
+                  alt={icon.logo}
+                  className="relative top-[20px] w-[200px] h-[60px] object-center object-contain"
+                />
+
+                <span className="relative top-[90px] text-start text-color text-[1rem] font-[400] tracking-[-.2px] leading-[1.4] max-laptop:text-[.8rem] group-hover:text-color">
                   {icon.name}
                 </span>
               </motion.div>
             </div>
-
-            <motion.div
-              className="absolute w-[40px] h-[40px] top-[25px] right-[25px] bg-background3 rounded-full flex items-center justify-center"
-              key={icon.id}
-              variants={opacityVariants}
-            >
-              <BsPlus color="#fff" size={32} />
-            </motion.div>
           </motion.div>
         ))}
       </div>

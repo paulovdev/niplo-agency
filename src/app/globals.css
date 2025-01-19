@@ -60,28 +60,39 @@ body {
     @apply text-color2;
   }
   .about-text {
-    h1 {
-      @apply text-[2.5rem] font-[600] tracking-[-1px] leading-[1.2] max-tablet:text-[2rem] max-mobile:text-[1.5rem];
-    }
-    p {
-      @apply max-w-[800px] text-[1.75rem] font-[400] tracking-[-1px] leading-[1.4] max-tablet:text-[1.5rem];
-    }
     b {
       @apply tracking-[-1px] font-[600];
     }
   }
-
+  .about-paragraph:first-child {
+    p {
+      text-indent: 20vw;
+    }
+  }
+  .about-paragraph:nth-child(2) {
+    p {
+      text-indent: 10vw;
+    }
+  }
   .blog-text {
     h1 {
-      @apply mb-[1rem] text-[2rem] font-[600] tracking-[-1px] leading-[1.2] uppercase max-tablet:text-[2rem] max-mobile:text-[1.5rem];
+      @apply mb-[2rem] text-[2.25rem] font-[600] tracking-[-.5px] leading-[1.2] uppercase max-tablet:text-[2rem] max-mobile:text-[1.5rem];
     }
     p {
-      @apply mb-[1rem] max-w-[800px] text-[1.25rem] font-[400] tracking-[-1px] leading-[1.4] max-tablet:text-[1.5rem];
+      @apply mt-[2.14em] mb-[-0.46em] text-[#303030] text-[18px] font-[400] tracking-[-0.003em] leading-[28px] max-tablet:text-[1rem];
     }
     b {
       @apply tracking-[-1px] font-[600];
     }
   }
+}
+
+.blog-text > p:first-of-type::first-letter {
+  initial-letter: 2 2;
+  color: #070707;
+  margin-right: 0.25rem;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .stairs .transition-container {

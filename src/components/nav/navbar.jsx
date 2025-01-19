@@ -1,65 +1,21 @@
 "use client";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { useCursor } from "@/context/cursor-context";
+import { useWindowScroll } from "react-use";
 
 import Menu from "./menu";
 import Link from "next/link";
-
-const PerspectiveMenu = ({ label, color, delayed }) => {
-  const { setCursorVariant } = useCursor();
-
-  const handleMouseEnter = () => {
-    setCursorVariant("navbar");
-  };
-
-  const handleMouseLeave = () => {
-    setCursorVariant("default");
-  };
-
-  const navigationsTextAnimCustom = {
-    hover: {
-      color: color,
-      transition: {
-        duration: 0.5,
-        delay: delayed,
-        type: "tween",
-        ease: [0.76, 0, 0.24, 1],
-      },
-    },
-  };
-
-  return (
-    <div
-      className="c-n size-full  bg-none"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <motion.p
-        className="font-chivo text-color font-[500] text-[.9rem] uppercase"
-        animate="hover"
-        variants={navigationsTextAnimCustom}
-      >
-        {label}
-      </motion.p>
-    </div>
-  );
-};
+import { PerspectiveMenu } from "./perspectiveText";
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+  const { y } = useWindowScroll();
   const [menuToggle, setMenuToggle] = useState(false);
   const pathname = usePathname();
-  const isAboutRoute = pathname === "/about";
   const isWorksRoute = /^\/works\/.+$/.test(pathname);
-  const isRouteValid = isAboutRoute || isWorksRoute;
 
-  const textColor = isRouteValid
-    ? "#e0dfdd"
-    : menuToggle
-    ? "#e0dfdd"
-    : "#222222";
-  const textChange = menuToggle ? "CLOSE" : "MENU";
+  const textColor = isWorksRoute ? "#e0dfdd" : "#222222";
 
   const navigationsTextAnim = {
     hover: {
@@ -71,27 +27,79 @@ export default function Nav() {
     },
   };
 
+  const opacityAnim = {
+    initial: { opacity: 0, y: -50 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        type: "tween",
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -50,
+      transition: {
+        duration: 0.4,
+        type: "tween",
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
+
   const navigationsText = [
     { title: "NIPLO AGENCY", title2: "GO TO HOME?", href: "/" },
     { title: "BRAND DESIGN", title2: "WEB DEVELOPMENT" },
     { title: "©2025", title2: "RIGHTED" },
   ];
+
+  useEffect(() => {
+    setScrolled(y > 550);
+  }, [y]);
+
   return (
     <>
       <nav
-        className={`fixed w-full h-[50px] top-0 pb-[3rem] pt-[1.5rem] px-[2.5rem] flex items-center 
-                    z-50 pointer-events-none select-none max-tablet:px-[1rem]`}
+        className="fixed w-full h-[50px] top-0 pb-[1rem] pt-[1rem] px-[2.5rem] flex items-center 
+        z-50 pointer-events-none select-none  max-tablet:px-[1rem]"
       >
-        <ul className="w-full flex items-center justify-between">
-          {navigationsText.map((i, index) => (
-            <li
-              className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto"
-              key={i.title}
-            >
-              {index === 0 ? (
-                <Link href={`${i.href}`}>
+        <ul
+          className="w-full flex items-center justify-between"
+          variants={opacityAnim}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          {!scrolled &&
+            navigationsText.map((i, index) => (
+              <li
+                className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto"
+                key={i.title}
+              >
+                {index === 0 ? (
+                  <Link href={`${i.href}`}>
+                    <motion.div
+                      className="relative size-full "
+                      variants={navigationsTextAnim}
+                      whileHover="hover"
+                    >
+                      <PerspectiveMenu
+                        label={i.title}
+                        href={i.href}
+                        color={textColor}
+                      />
+                      <PerspectiveMenu
+                        label={pathname === "/" ? "u are in home" : i.title2}
+                        href={i.href}
+                        color={textColor}
+                      />
+                    </motion.div>
+                  </Link>
+                ) : (
                   <motion.div
-                    className="relative size-full "
+                    className="relative size-full max-tablet:hidden"
                     variants={navigationsTextAnim}
                     whileHover="hover"
                   >
@@ -99,58 +107,54 @@ export default function Nav() {
                       label={i.title}
                       href={i.href}
                       color={textColor}
-                      delayed={menuToggle ? 0 : 1}
                     />
                     <PerspectiveMenu
-                      label={pathname === "/" ? "u are in home" : i.title2}
+                      label={i.title2}
                       href={i.href}
                       color={textColor}
-                      delayed={menuToggle ? 0 : 1}
                     />
                   </motion.div>
-                </Link>
-              ) : (
-                <motion.div
-                  className="relative size-full max-tablet:hidden"
-                  variants={navigationsTextAnim}
-                  whileHover="hover"
-                >
-                  <PerspectiveMenu
-                    label={i.title}
-                    href={i.href}
-                    color={textColor}
-                    delayed={menuToggle ? 0 : 1}
-                  />
-                  <PerspectiveMenu
-                    label={i.title2}
-                    href={i.href}
-                    color={textColor}
-                    delayed={menuToggle ? 0 : 1}
-                  />
-                </motion.div>
-              )}
-            </li>
-          ))}
+                )}
+              </li>
+            ))}
 
-          <li className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto">
-            <motion.div
-              className="relative size-full "
-              onClick={() => setMenuToggle(!menuToggle)}
-              whileHover="hover"
-              variants={navigationsTextAnim}
-            >
-              <PerspectiveMenu
-                label={textChange}
-                color={textColor}
-                delayed={menuToggle ? 0 : 1}
-              />
-              <PerspectiveMenu
-                label={textChange}
-                color={textColor}
-                delayed={menuToggle ? 0 : 1}
-              />
-            </motion.div>
-          </li>
+          {!scrolled && (
+            <li className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto">
+              <motion.div
+                className="relative size-full mb-[20px]"
+                onClick={() => setMenuToggle(!menuToggle)}
+                whileHover="hover"
+                variants={navigationsTextAnim}
+              >
+                <PerspectiveMenu label="MENU" color={textColor} />
+                <PerspectiveMenu label="MENU" color={textColor} />
+              </motion.div>
+            </li>
+          )}
+
+          <AnimatePresence>
+            {scrolled && (
+              <motion.div
+                className="absolute top-0 right-0 bg-background5 px-[2rem] py-[1.5rem] cursor-pointer pointer-events-auto"
+                variants={opacityAnim}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                whileHover="hover"
+                onClick={() => setMenuToggle(!menuToggle)}
+              >
+                <li className="w-fit h-[20px] overflow-hidden ">
+                  <motion.div
+                    className="relative size-full mb-[20px]"
+                    variants={navigationsTextAnim}
+                  >
+                    <PerspectiveMenu label="MENU" color="#fff" />
+                    <PerspectiveMenu label="MENU" color="#fff" />
+                  </motion.div>
+                </li>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </ul>
       </nav>
 

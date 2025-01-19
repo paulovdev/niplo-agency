@@ -5,6 +5,8 @@ import Image from "next/image";
 import SectionText from "../reusable/section-text";
 import blogsData from "@/data/blogsData";
 import Link from "next/link";
+import { useInView } from "react-intersection-observer";
+import { appearAnimY } from "@/utils/anim";
 
 export default function Blog() {
   const imgZoom = {
@@ -17,8 +19,13 @@ export default function Blog() {
     },
   };
 
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+    triggerOnce: true,
+  });
+
   return (
-    <>
+    <section className="pb-[50px] select-none pointer-events-none" ref={ref}>
       <SectionText
         text="newsroom"
         src="/blog"
@@ -26,12 +33,14 @@ export default function Blog() {
         linkBol={true}
       />
 
-      <div className="mb-[100px] grid grid-cols-3 gap-[1.5rem] max-tablet:grid-cols-1">
-        {blogsData.map((i, index) => (
-          <Link
-            href={`/blog/${i.title.split(" ").join("-").toLowerCase()}`}
-            key={i.title}
-          >
+      <motion.div
+        className="mb-[100px] grid grid-cols-3 gap-[1.5rem] max-tablet:grid-cols-1"
+        variants={appearAnimY}
+        initial="initial"
+        animate={inView ? "animate" : ""}
+      >
+        {blogsData.slice(0, 3).map((i, index) => (
+          <Link href={`/blog/${i.id}`} key={i.title}>
             <div className="relative size-full mb-[4rem] max-tablet:mb-0">
               <motion.div
                 className=""
@@ -67,7 +76,7 @@ export default function Blog() {
             </div>
           </Link>
         ))}
-      </div>
-    </>
+      </motion.div>
+    </section>
   );
 }

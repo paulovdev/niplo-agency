@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import useMouse from "@react-hook/mouse-position";
 import { useCursor } from "@/context/cursor-context";
 import { useMedia } from "react-use";
@@ -57,7 +57,7 @@ function Cursor({ refPos }) {
     <>
       {!isTablet && (
         <motion.div
-          className="fixed top-0 left-0 bg-background pointer-events-none z-[49]"
+          className="fixed top-0 left-0 bg-background pointer-events-none z-[50]"
           variants={variants}
           animate={cursorVariant}
         >

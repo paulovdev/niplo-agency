@@ -2,7 +2,7 @@ import TextSlide from "../reusable/text-slide";
 
 export default function Hero() {
   return (
-    <div className="w-full h-[85dvh] my-0 mx-auto py-[2rem] flex flex-col items-start justify-end select-none pointer-events-none">
+    <div className="w-full h-[85dvh] my-0 mx-auto pt-[2rem] flex flex-col items-start justify-end select-none pointer-events-none">
       <div className="w-full py-[4rem]  flex items-start justify-between  flex-col ">
         <span className="mb-[1rem] text-color2 text-[.8rem] font-[500] tracking-[-.2px] max-tablet:text-[.8rem]">
           OF 2015 UNTIL 2025

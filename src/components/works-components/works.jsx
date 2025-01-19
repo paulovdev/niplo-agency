@@ -21,32 +21,32 @@ const Work = ({ name, category, src, color, year }) => {
 
   return (
     <motion.div
-      className="c-p relative w-full h-fit py-[1rem] hover:opacity-60 transition-all "
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
-    >
-      <div className="relative w-full flex items-center justify-between">
-        <div className="w-[25%] flex justify-start">
-          <span className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
-            /{year}
-          </span>
-        </div>
-
-        <div className="w-[25%] flex justify-start">
-          <h1 className="text-color text-[2.5rem] font-[500] tracking-[-1px] max-tablet:text-[1.5rem] max-tablet:font-[600]">
-            {name}
-          </h1>
-        </div>
-
-        <div className="w-[50%] flex justify-end">
-          <p className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
-            {category}
-          </p>
-        </div>
+    className="c-p relative w-full h-fit py-[.5rem] hover:opacity-60 transition-all "
+    onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+    onClick={handleClick}
+  >
+    <div className="relative w-full flex items-center justify-between">
+      <div className="w-[25%] flex justify-start">
+        <span className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
+          /{year}
+        </span>
       </div>
-      <div className="pt-[2rem] border-b border-border" />
-    </motion.div>
+
+      <div className="w-[25%] flex justify-start">
+        <h1 className="text-color text-[2.5rem] font-[500] tracking-[-1px] max-tablet:text-[1.5rem] max-tablet:font-[600]">
+          {name}
+        </h1>
+      </div>
+
+      <div className="w-[50%] flex justify-end">
+        <p className="text-color text-[.9rem] font-[500] tracking-[-.5px] max-tablet:text-[.9rem]">
+          {category}
+        </p>
+      </div>
+    </div>
+    <div className="pt-[1rem] border-b border-border" />
+  </motion.div>
   );
 };
 

@@ -3,19 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
-const PerspectiveMenuText = ({ label, isActive }) => {
-  return (
-    <div className="active-menu-link size-full  bg-none flex items-start justify-center flex-col ">
-      <div
-        className={`uppercase tracking-[1px] font-[400] text-[4.5vw] max-tablet:text-[2.5rem] 
-          ${isActive ? "text-active" : "text-color3"} `}
-      >
-        {label}
-      </div>
-    </div>
-  );
-};
+import { PerspectiveMenu, PerspectiveMenuText } from "./perspectiveText";
 
 const Menu = ({ menuToggle, setMenuToggle }) => {
   const pathname = usePathname();
@@ -89,12 +77,29 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
     },
   };
 
+  const navigationsTextAnim = {
+    hover: {
+      top: "-100%",
+      transition: { duration: 0.5, type: "tween", ease: [0.76, 0, 0.24, 1] },
+    },
+    initial: {
+      top: "0%",
+    },
+  };
+
   const navigationsMenuText = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
     { name: "Works", href: "/works" },
     { name: "Blog", href: "/blog" },
     { name: "Partners", href: "/partners" },
+  ];
+
+  const navigationsText = [
+    { title: "NIPLO AGENCY", title2: "NIPLO AGENCY", href: "/" },
+    { title: "BRAND DESIGN", title2: "WEB DEVELOPMENT" },
+    { title: "©2025", title2: "RIGHTED" },
   ];
 
   return (
@@ -103,8 +108,50 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
         variants={menuAnim}
         initial="closed"
         animate={menuToggle ? "open" : "closed"}
-        className="fixed w-full h-0 top-0 right-0 bg-background5 backdrop-blur-3xl select-none overflow-hidden z-[49]"
+        className="fixed w-full h-0 top-0 right-0 bg-background5 backdrop-blur-3xl select-none overflow-hidden z-[50]"
       >
+        <div className="fixed w-full h-[50px] top-0 pb-[3rem] pt-[1.5rem] px-[2.5rem] flex items-center z-50 pointer-events-none select-none">
+          <div className="w-full flex items-center justify-between">
+            <ul className="w-full flex items-center justify-between">
+              {navigationsText.map((i, index) => (
+                <li
+                  className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto"
+                  key={i.title}
+                >
+                  <motion.div
+                    className="relative size-full max-tablet:hidden"
+                    variants={navigationsTextAnim}
+                    whileHover="hover"
+                  >
+                    <PerspectiveMenu
+                      label={i.title}
+                      href={i.href}
+                      color="#fff"
+                    />
+                    <PerspectiveMenu
+                      label={i.title2}
+                      href={i.href}
+                      color="#fff"
+                    />
+                  </motion.div>
+                </li>
+              ))}
+
+              <li className="w-fit h-[20px] overflow-hidden cursor-pointer pointer-events-auto">
+                <motion.div
+                  className="relative size-full "
+                  onClick={() => setMenuToggle(!menuToggle)}
+                  whileHover="hover"
+                  variants={navigationsTextAnim}
+                >
+                  <PerspectiveMenu label="CLOSE" color="#fff" />
+                  <PerspectiveMenu label="CLOSE" color="#fff" />
+                </motion.div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <motion.div
           variants={contentAnim}
           initial="closed"
@@ -134,27 +181,6 @@ const Menu = ({ menuToggle, setMenuToggle }) => {
                 </div>
               );
             })}
-          </div>
-          <div className="w-fit mt-[3rem] grid grid-cols-2 gap-[2rem]">
-            <div className="w-full">
-              <p className="mb-[1.5rem] text-color4 uppercase text-[1rem] font-[500] tracking-[-.3px]">
-                CONNECT
-              </p>
-              <p className="text-color3 text-[1rem] font-[400] tracking-[-.3px]">
-                1600 Amphitheatre Parkway Mountain View — California
-              </p>
-            </div>
-            <div className="w-full">
-              <p className="mb-[1.5rem] text-color4 uppercase text-[1rem] font-[500] tracking-[-.3px]">
-                SOCIALS
-              </p>
-              <p className="mb-[.5rem] text-color3 text-[1rem] font-[400] tracking-[-.3px]">
-                Instagram
-              </p>
-              <p className="text-color3 text-[1rem] font-[400] tracking-[-.3px]">
-                LinkedIn
-              </p>
-            </div>
           </div>
         </motion.div>
       </motion.div>

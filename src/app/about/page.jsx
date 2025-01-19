@@ -1,23 +1,25 @@
-import Hero from '../../components/about-components/hero';
-import Partners from '../../components/home-components/partners';
-import Services from '../../components/home-components/services';
-
-import { Shape } from "@/utils/shape";
+import Video from "@/components/about-components/video";
+import Hero from "../../components/about-components/hero";
+import Paragraph from "@/components/about-components/paragraph";
+import Awards from "@/components/about-components/awards";
+import Stats from "@/components/about-components/stats";
+/* import InViewAnimation from "@/utils/inview-anim";
+ */
 const About = () => {
-    return (
-        <section className='mx-auto my-0 size-full  bg-background4'>
+  return (
+    <section className="mx-auto my-0 size-full">
+      <div className="px-[2.5rem] max-laptop:p-[1rem]">
+        <Hero />
+      </div>
 
-            <div className="p-[2.5rem]">
-                <Hero />
-            </div>
-
-            <div className="p-[2.5rem]">
-                <Partners />
-                <Services />
-            </div>
-            <Shape pos="right-12 bg-[#222222]" />
-        </section>
-    )
-}
+      <div className="p-[2.5rem] max-laptop:p-[1rem]">
+        <Video />
+        <Paragraph />
+        <Stats />
+        <Awards />
+      </div>
+    </section>
+  );
+};
 
 export default About;

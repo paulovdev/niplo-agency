@@ -3,11 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const SectionText = ({ text, src, linkText, linkBol }) => {
+const SectionText = ({ text, src, linkText, linkBol, marginBottom }) => {
   const [isLinkActive, setIsLinkActive] = useState(linkBol);
 
   return (
-    <div className="w-full mb-[2.5rem] flex items-center justify-between select-none pointer-events-none">
+    <div
+      className="w-full mb-[2.5rem] flex items-center justify-between select-none pointer-events-none"
+      style={{ marginBottom: marginBottom }}
+    >
       <h2 className="font-general text-color text-[.9rem] tracking-[-.5px] font-[600] uppercase ">
         {text}
       </h2>

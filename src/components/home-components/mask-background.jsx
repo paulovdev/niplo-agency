@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import About from "./about";
 import TextSlide from "@/components/reusable/text-slide";
+import Link from "next/link";
 
 const MaskBackground = ({ src, title }) => {
   if (typeof window !== "undefined") {
@@ -26,7 +27,7 @@ const MaskBackground = ({ src, title }) => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
-      filter: "brightness(60%)",
+      filter: "brightness(75%)",
     });
 
     clipAnimation.to(".background-text-1 ", {
@@ -38,11 +39,15 @@ const MaskBackground = ({ src, title }) => {
       opacity: 1,
       top: "30%",
     });
+    clipAnimation.to(".background-text-3 ", {
+      opacity: 1,
+      top: "51%",
+    });
   });
 
   return (
     <section
-      className="min-h-screen w-screen px-[2.5rem] pb-[100px] flex items-center justify-center max-laptop:px-[1rem]"
+      className="min-h-screen w-screen px-[2.5rem] pb-[50px] flex items-center justify-center max-laptop:px-[1rem]"
       id="about"
     >
       <div className="w-screen h-dvh" id="clip">
@@ -71,6 +76,15 @@ const MaskBackground = ({ src, title }) => {
 
         <div className="background-text-2 absolute w-screen h-fit left-[50%] top-[50%] z-20  opacity-0 max-tablet:left-0">
           <About />
+        </div>
+
+        <div className="background-text-3 absolute w-screen h-fit left-[50%] top-[65%] z-20  opacity-0 max-tablet:left-0">
+          <Link
+            href={"/about"}
+            className="text-color3 text-[1rem] font-chivo font-[500] uppercase underline"
+          >
+            More About us
+          </Link>
         </div>
       </div>
     </section>

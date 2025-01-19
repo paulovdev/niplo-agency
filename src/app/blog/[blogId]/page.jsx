@@ -27,14 +27,14 @@ const BlogView = async ({ params: paramsPromise }) => {
         <DynamicImage
           src={blog.img}
           alt={blog.title}
-          width={1200}
-          height={800}
+          width={1500}
+          height={1500}
           className="w-full h-[800px] object-center object-cover rounded-[1rem] "
         />
 
-        <div className="relative max-w-[1000px] mx-auto py-[4rem] flex flex-col justify-center items-center">
+        <div className="relative max-w-[600px] mx-auto py-[4rem] flex flex-col justify-center items-center">
           <div
-            className="blog-text "
+            className="blog-text"
             dangerouslySetInnerHTML={{ __html: blog.description }}
           ></div>
         </div>
